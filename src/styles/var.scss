@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/*===== variables_default =====*/
+$default-pruple: #787bf2;
+$default-yello: #fad14c;
+$default-font-size: 10px;
+/*===== variables_header =====*/
+$header-bgc: #4c5063;
+$header-notice: #74788f;
+
+/*===== variables_sideBar =====*/
+$sideBar-bgc: #fff;
+// $sideBar-Profile-bgc: (
+//   background: linear-gradient(0deg, #787bf2 19%, #a2a6f6 60%),
+//   background: -moz-linear-gradient(0deg, #787bf2 19%, #a2a6f6 60%),
+//   background: -webkit-linear-gradient(0deg, #787bf2 19%, #a2a6f6 60%),
+//   background: -o-linear-gradient(0deg, #787bf2 19%, #a2a6f6 60%)
+// );
+// $sideBar-icon-hover-bg: #f6f3ea;
+$sideBar-icon-select-bg: #f1f1f9;
+$sideBar-icon-hover-bar: #fad14c;
+$sideBar-icon-select-bar: #787bf2;
+
+/*===== variables_main =====*/
+$main-bgc: #f2f3f3;
+
+$card-block-default-color: #1c2c3c;
+$card-boxshadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.15);
+$single-news-title-padding: 12px 0 0;
+$card-padding: 4px 0;
+$card-z-index: 999;
+$card-bgcolors: (
+  youth: #fbd304,
+  culture: #dc1454,
+  life: #14b35c,
+  entertainment: #067aef,
+  gadget: #04b494,
+  education: #1c2c3c,
+  design: #54443c
+);
+
+$list: youth culture life entertainment gadget education design;
