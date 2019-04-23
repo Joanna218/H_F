@@ -23,21 +23,24 @@ $fa-font-path: "/build/fonts/";
 
 /*  全站統一性定義  */
 
-// @import "global";
+@import "global";
 
 body {
-  border: 1px solid;
+  // border: 1px solid;
+  height: 100%;
+  background-color: $main-bgc;
   .wrapper {
     .row {
+      border: 1px solid;
       #sideBar {
         background-color: $sideBar-bgc;
         padding: 0;
-        height: 100%;
         // position: fixed;
-        top: 0;
+        // top: 0;
         // left: -250px;
         // width: 250px;
         transition: 0.3s;
+        // border: 1px solid;
         #userProfile {
           height: 200px;
           background: linear-gradient(0deg, #787bf2 19%, #a2a6f6 60%);
@@ -49,32 +52,39 @@ body {
           align-items: center;
           #userProfileBox {
             width: 90%;
-            height: 80%;
             border: 1px solid;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             #userPhoto {
-              width: 100px;
-              height: 100px;
-              border-radius: 50%;
-              border: 1px solid;
+              width: 110px;
+              height: 110px;
+              img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+              }
+            }
+            #userIM {
+              margin-top: 10px;
             }
           }
         }
         #featureLists {
-          border: 1px solid;
+          // border: 1px solid;
           #featureListsUl {
-            border: 1px solid;
+            // border: 1px solid;
             margin: 0;
             padding: 0;
             margin-top: 25px;
             .featureListsli {
               // padding: 10px 0px;
-              border: 1px solid;
+              transition: 0.3s;
+              border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+              box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
               a {
-                border: 1px solid;
+                // border: 1px solid;
                 padding: 20px;
                 // background-color: pink;
                 display: flex;
@@ -91,6 +101,16 @@ body {
                 width: 33px;
                 height: 33px;
                 border: 1px solid;
+              }
+              &:hover {
+                margin-left: 1px;
+                border-left: 3px solid $sideBar-list-hover-bar;
+                background-color: $sideBar-list-hover-bg;
+              }
+              &.isActive {
+                margin-left: 1px;
+                border-left: 3px solid $sideBar-list-select-bar;
+                background-color: $sideBar-list-select-bg;
               }
             }
           }

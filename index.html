@@ -24,10 +24,10 @@
           <div id="userProfile">
             <div id="userProfileBox">
               <div id="userPhoto">
-                userPhoto
+                <img src="./build/images/head.jpg" alt="" />
               </div>
               <div id="userIM">
-                <h5>userName</h5>
+                <h5>林靜妤</h5>
                 <span>高級會員</span>
               </div>
             </div>
@@ -35,7 +35,7 @@
           <!-- 下方功能列表 -->
           <div id="featureLists">
             <ul id="featureListsUl">
-              <li class="featureListsli">
+              <li class="featureListsli isActive">
                 <a href="#">
                   <span class="featureName">儀錶板</span>
                   <span class="icon icon-dashboard"></span>
@@ -124,8 +124,8 @@
       $("#userProfile").on("click", function() {
         console.log("userProfiledd");
         $("#sideBar").removeClass("col-md-2");
-        $("#main").removeClass("col-md-10");
         $("#sideBar").addClass("col-md-1");
+        $("#main").removeClass("col-md-10");
         $("#main").addClass("col-md-11");
       });
     })($);
