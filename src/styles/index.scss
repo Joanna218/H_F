@@ -33,6 +33,11 @@ body {
         background-color: $sideBar-bgc;
         padding: 0;
         height: 100%;
+        // position: fixed;
+        top: 0;
+        // left: -250px;
+        // width: 250px;
+        transition: 0.3s;
         #userProfile {
           height: 200px;
           background: linear-gradient(0deg, #787bf2 19%, #a2a6f6 60%);

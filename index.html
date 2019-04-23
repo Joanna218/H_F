@@ -13,12 +13,14 @@
     />
     <link rel="stylesheet" href="./build/css/index.css" />
     <link rel="stylesheet" href="./build/sprite.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="container-fluid wrapper">
       <div class="row">
         <!-- 左邊sideBar -->
         <div class="col-md-2" id="sideBar">
+          <!-- 上方頭貼部分 -->
           <div id="userProfile">
             <div id="userProfileBox">
               <div id="userPhoto">
@@ -30,6 +32,7 @@
               </div>
             </div>
           </div>
+          <!-- 下方功能列表 -->
           <div id="featureLists">
             <ul id="featureListsUl">
               <li class="featureListsli">
@@ -114,4 +117,17 @@
       </div>
     </div>
   </body>
+
+  <script>
+    (function($) {
+      console.log("read");
+      $("#userProfile").on("click", function() {
+        console.log("userProfiledd");
+        $("#sideBar").removeClass("col-md-2");
+        $("#main").removeClass("col-md-10");
+        $("#sideBar").addClass("col-md-1");
+        $("#main").addClass("col-md-11");
+      });
+    })($);
+  </script>
 </html>
