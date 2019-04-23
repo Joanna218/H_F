@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="./build/css/index.css" />
     <link rel="stylesheet" href="./build/sprite.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.4/d3.layout.cloud.min.js"></script>
   </head>
   <body>
     <div class="container-fluid wrapper">
@@ -79,7 +82,9 @@
                     <h2>粉絲比例圖</h2>
                     <span>以下顯示近3個月資料</span>
                   </div>
-                  <div class="fansBoxChart">Chart</div>
+                  <div class="fansBoxChart">
+                    <canvas id="fansDoughnut" width="400" height="400"></canvas>
+                  </div>
                 </div>
               </div>
               <div class="col-md-8">
@@ -87,7 +92,9 @@
                   <div class="fansBoxTitle">
                     <h2>心情比例圖</h2>
                   </div>
-                  <div class="fansBoxChart">Chart</div>
+                  <div class="fansBoxChart">
+                    <canvas id="moodBar"></canvas>
+                  </div>
                 </div>
               </div>
             </div>
@@ -99,7 +106,12 @@
                     <h2>粉黑文字雲</h2>
                     <span>以下顯示近3個月資料</span>
                   </div>
-                  <div class="fansBoxChart">Chart</div>
+                  <div class="fansBoxChart">
+                    <div
+                      id="tag"
+                      style="border: 1px solid #000; height: 300px; width: 400px;"
+                    ></div>
+                  </div>
                 </div>
               </div>
               <div class="col-md-5">
@@ -117,6 +129,7 @@
       </div>
     </div>
   </body>
+  <script src="src/app/index.js"></script>
 
   <script>
     (function($) {

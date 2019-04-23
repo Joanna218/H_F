@@ -1,65 +1,117 @@
-$("#main-banner").sliderPro({
-  width: "100%",
-  height: 500,
-  arrows: true,
-  buttons: false,
-  waitForLayers: true,
-  thumbnailWidth: 200,
-  thumbnailHeight: 100,
-  thunbnailPointer: true,
-  autoplay: false,
-  autoScaleLayers: false
-});
-
-$(".popup-gallery").magnificPopup({
-  delegate: "a",
-  type: "image",
-  tLoading: "Loading image ....",
-  mainClass: "mip-img-mobile",
-  gallery: {
-    enable: true,
-    navigateByImgClick: true,
-    preload: [0, 1]
+// =====================紛絲比例圖==================================
+var ctx = document.getElementById("fansDoughnut").getContext("2d");
+var fansDoughnut = new Chart(ctx, {
+  type: "doughnut",
+  data: {
+    labels: ["紛絲", "中立", "黑粉"],
+    datasets: [
+      {
+        data: [50, 20, 30], // 資料比例
+        backgroundColor: ["#787bf2", "#78775", "#fad14c"],
+        borderColor: "#787775",
+        borderWidth: 1,
+        hoverBackgroundColor: ["red", "blue", "orange"]
+      }
+    ]
   },
-  image: {
-    tError: '<a href="%url%> The image...</a> could not be ~',
-    titleSrc: function(item) {
-      return itemel.attr("title") + "<small>by Marsel Van ~</small>";
-    }
+  options: {
+    cutoutPercentage: 80
+  }
+});
+// =====================心情比例圖==================================
+var ctx = document.getElementById("moodBar").getContext("2d");
+var moodBar = new Chart(ctx, {
+  type: "bar",
+  data: {
+    labels: ["讚", "大心", "哈", "哇", "嗚", "怒"],
+    datasets: [
+      {
+        label: "按讚比例分析",
+        data: [50, 20, 30, 12, 34, 25, 10], // 資料比例
+        backgroundColor: [
+          "#787bf2",
+          "#f86260",
+          "#fad14c",
+          "#64ae7d",
+          "#61cef6",
+          "#f84c68"
+        ],
+        borderColor: "#787775",
+        borderWidth: 1,
+        hoverBackgroundColor: ["red", "blue", "orange"]
+      }
+    ]
   }
 });
 
-// (function () {
-//   "use strict";
+//取得d3顏色
+var fill = d3.scaleOrdinal(d3.schemeCategory10);
+//文字雲/關鍵字，及字型大小
+var data = [
+  { text: "加里山", size: 21 },
+  { text: "文字雲", size: 18 },
+  { text: "翠湖 螢火蟲", size: 17 },
+  { text: "你好棒", size: 21 },
+  { text: "我支持", size: 18 },
+  { text: "韓流來襲", size: 28 },
+  { text: "支持韓", size: 35 },
+  { text: "永遠支持", size: 18 },
+  { text: "翠湖 螢火蟲", size: 17 },
+  { text: "加里山", size: 21 },
+  { text: "文字雲", size: 18 },
+  { text: "翠湖 螢火蟲", size: 4 },
+  { text: "加里山", size: 11 },
+  { text: "文字雲", size: 15 },
+  { text: "翠湖 螢火蟲", size: 12 }
+];
+//取得呈現處的寬、高
+var w = parseInt(d3.select("#tag").style("width"), 10);
+var h = parseInt(d3.select("#tag").style("height"), 10);
 
-//   $("#main-banner").sliderPro({
-//     width: "100%",
-//     height: 500,
-//     arrows: true,
-//     buttons: false,
-//     waitForLayers: true,
-//     thumbnailWidth: 200,
-//     thumbnailHeight: 100,
-//     thunbnailPointer: true,
-//     autoplay: false,
-//     autoScaleLayers: false
-//   });
+d3.layout
+  .cloud()
+  .size([w, h])
+  .words(data)
+  .padding(2)
+  .rotate(function() {
+    return ~~(Math.random() * 2) * 90;
+  })
+  .rotate(function() {
+    return 0;
+  })
+  .fontSize(function(d) {
+    return d.size;
+  })
+  .on("end", draw)
+  .start();
 
-//   $(".popup-gallery").magnificPopup({
-//     delegate: "a",
-//     type: "image",
-//     tLoading: "Loading image ....",
-//     mainClass: "mip-img-mobile",
-//     gallery: {
-//       enable: true,
-//       navigateByImgClick: true,
-//       preload: [0, 1]
-//     },
-//     image: {
-//       tError: '<a href="%url%> The image...</a> could not be ~',
-//       titleSrc: function(item) {
-//         return itemel.attr("title") + "<small>by Marsel Van ~</small>";
-//       }
-//     }
-//   });
-// });
+function draw(words) {
+  d3.select("#tag")
+    .append("svg")
+    .attr("width", w)
+    .attr("height", h)
+    .append("g")
+    .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")")
+    .selectAll("text")
+    .data(words)
+    .enter()
+    .append("text")
+    .style("font-size", function(d) {
+      return d.size + "px";
+    })
+    .style("font-family", "Microsoft JhengHei")
+    .style("cursor", "pointer")
+    .style("fill", function(d, i) {
+      return fill(i);
+    })
+    .attr("text-anchor", "middle")
+    .attr("transform", function(d) {
+      return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+    })
+    .text(function(d) {
+      return d.text;
+    })
+    .on("click", function(d) {
+      window.open("https://www.google.com/search?q=" + d.text, "_blank");
+    });
+}
