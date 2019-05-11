@@ -26,6 +26,11 @@ const paths = {
     watch: "./src/styles/**/*.scss",
     dest: "build/css"
   },
+  styles: {
+    src: "./src/styles/analysis.scss",
+    watch: "./src/styles/**/*.scss",
+    dest: "build/css"
+  },
   images: {
     src: "src/images/*",
     dest: "build/images"

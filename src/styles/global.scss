@@ -5,7 +5,9 @@ body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", "微軟正黑體",
     serif;
 }
-
+h2 {
+  font-weight: 700;
+}
 @for $i from 0 through 15 {
   .strict#{$i} {
     > div {

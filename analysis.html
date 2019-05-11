@@ -11,12 +11,10 @@
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./build/css/index.css" />
+    <link rel="stylesheet" href="./build/css/analysis.css" />
     <link rel="stylesheet" href="./build/sprite.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.4/d3.layout.cloud.min.js"></script>
   </head>
   <body>
     <div class="container-fluid wrapper">
@@ -59,6 +57,7 @@
             </ul>
           </div>
         </div>
+        <!-- 左邊sideBar -->
         <!-- 右邊main -->
         <div class="col-md-10" id="main">
           <!-- 上方header -->
@@ -72,9 +71,35 @@
               <span class="icon icon-notice"></span>
             </div>
           </div>
+          <!-- 上方header -->
           <!-- 下方content -->
           <div class="container content">
-            <!-- 第一列row 粉絲比例圖、心情比例圖 -->
+            <!-- 第一列row 選擇粉絲專業 -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="fansBox BoxDiff">
+                  <div class="fansBoxTitle col-md-4">
+                    <h2>選擇粉絲專頁</h2>
+                  </div>
+                  <div class="fansPageSelect col-md-8">
+                    <div class="checkBox">
+                      <input type="checkbox" name="" id="" />
+                      <label for="">韓國瑜</label>
+                    </div>
+                    <div class="checkBox">
+                      <input type="checkbox" name="" id="" />
+                      <label for="">賴清德</label>
+                    </div>
+
+                    <div class="checkBox">
+                      <input type="checkbox" name="" id="" />
+                      <label for="">郭台銘</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 第二列row 粉絲比例圖、心情比例圖 -->
             <div class="row">
               <div class="col-md-4">
                 <div class="fansBox">
@@ -98,7 +123,7 @@
                 </div>
               </div>
             </div>
-            <!-- 第二列row 粉黑文字雲、留言熱門話題排行 -->
+            <!-- 第三列row 粉黑文字雲、留言熱門話題排行 -->
             <div class="row">
               <div class="col-md-7">
                 <div class="fansBox">
@@ -136,6 +161,7 @@
         </div>
       </div>
     </div>
+    <!-- 右邊main -->
   </body>
   <script src="./build/js/app.js"></script>
 
