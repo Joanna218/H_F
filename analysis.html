@@ -79,7 +79,7 @@
               <div class="col-md-12">
                 <div class="fansBox BoxDiff">
                   <div class="fansBoxTitle col-md-4">
-                    <h2>選擇粉絲專頁</h2>
+                    <h4>選擇粉絲專頁</h4>
                   </div>
                   <div class="fansPageSelect col-md-8">
                     <div class="checkBox">
@@ -99,61 +99,88 @@
                 </div>
               </div>
             </div>
-            <!-- 第二列row 粉絲比例圖、心情比例圖 -->
+            <!-- 第二列row 粉絲比例圖、粉絲重疊數、假帳號重疊數 -->
             <div class="row">
               <div class="col-md-4">
                 <div class="fansBox">
                   <div class="fansBoxTitle">
-                    <h2>粉絲比例圖</h2>
-                    <span>以下顯示近3個月資料</span>
+                    <h4>粉絲比例圖</h4>
                   </div>
                   <div class="fansBoxChart">
-                    <canvas id="fansDoughnut" width="400" height="400"></canvas>
+                    <!-- <canvas id="fansDoughnut" width="100" height="100"></canvas> -->
                   </div>
                 </div>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-4">
                 <div class="fansBox">
                   <div class="fansBoxTitle">
-                    <h2>心情比例圖</h2>
+                    <h4>粉絲重疊</h4>
                   </div>
                   <div class="fansBoxChart">
-                    <canvas id="moodBar"></canvas>
+                    <h1>5010</h1>
+                    <h6>帳號重疊</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="fansBox">
+                  <div class="fansBoxTitle">
+                    <h4>假帳號重疊</h4>
+                  </div>
+                  <div class="fansBoxChart">
+                    <h1>420</h1>
+                    <h6>假帳號重疊</h6>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- 第三列row 粉黑文字雲、留言熱門話題排行 -->
+            <!-- 第三列row 異常帳號、粉專影響力 -->
             <div class="row">
-              <div class="col-md-7">
+              <div class="col-md-6">
                 <div class="fansBox">
                   <div class="fansBoxTitle">
-                    <h2>粉黑文字雲</h2>
-                    <span>以下顯示近3個月資料</span>
+                    <h4>異常帳號</h4>
                   </div>
                   <div class="fansBoxChart">
-                    <input
-                      type="checkbox"
-                      id="switch-blue"
-                      class="switch"
-                      checked
-                    />
-                    <label for="switch-blue" class="lbl-off">黑粉</label>
-                    <label for="switch-blue" class="lbl-on">紛絲</label>
-                    <div
-                      id="tag"
-                      style="border: 1px solid #000; height: 300px; width: 400px;"
-                    ></div>
+                    <table border="1px">
+                      <thead>
+                        <tr>
+                          <th>帳號名稱</th>
+                          <th>單篇留言數</th>
+                          <th>#Tag</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>陳思瑋</td>
+                          <td>20則</td>
+                          <td>#Tag</td>
+                        </tr>
+                        <tr>
+                          <td>張桂華</td>
+                          <td>10則</td>
+                          <td>#Tag</td>
+                        </tr>
+                        <tr>
+                          <td>江政侑</td>
+                          <td>3則</td>
+                          <td>#Tag</td>
+                        </tr>
+                        <tr>
+                          <td>藍莉瑄</td>
+                          <td>5則</td>
+                          <td>#Tag</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
-              <div class="col-md-5">
+              <div class="col-md-6">
                 <div class="fansBox">
                   <div class="fansBoxTitle">
-                    <h2>留言熱門話題排行</h2>
-                    <span>以下顯示近3個月資料</span>
+                    <h4>粉專影響力</h4>
                   </div>
-                  <div class="fansBoxChart">Chart</div>
                 </div>
               </div>
             </div>

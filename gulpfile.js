@@ -22,11 +22,6 @@ const paths = {
     src: "./*.html"
   },
   styles: {
-    src: "./src/styles/index.scss",
-    watch: "./src/styles/**/*.scss",
-    dest: "build/css"
-  },
-  styles: {
     src: "./src/styles/analysis.scss",
     watch: "./src/styles/**/*.scss",
     dest: "build/css"

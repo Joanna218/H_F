@@ -149,29 +149,42 @@ body {
           .fansBox {
             // width: 90%;
             // height: 100%;
+            max-height: 100vh;
             background-color: #fff;
             margin-top: 30px;
-            padding: 15px;
+            padding-left: 15px;
             // border: 1px solid;
-            border-radius: 40px;
+            border-radius: 15px;
             box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.3);
             // margin-left: auto;
-            margin-left: 10px;
+            margin-left: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             &.BoxDiff {
               flex-direction: row;
-              border-radius: 20px;
             }
             .fansBoxTitle {
               // border: 1px solid;
               width: 90%;
               margin: 20px 0px;
               font-weight: bold;
-              h2 {
+              h4 {
                 color: $default-pruple;
+                position: relative;
+                font-weight: 700;
+                &::before {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  // width: 5px;
+                  height: 80%;
+                  border-left: 5px solid red;
+                  margin-left: -10px;
+                  margin-top: 3px;
+                }
               }
+
               span {
                 color: $default-yello;
               }
@@ -179,110 +192,34 @@ body {
             .fansPageSelect {
               display: flex;
               .checkBox {
-                margin: 10px;
+                margin-right: 20px;
+                // justify-item: space-between;
                 input {
                   width: 20px;
                   height: 20px;
                 }
                 label {
                   font-size: $default-font-size * 2;
+                  // margin-bottom: 0px;
                 }
               }
             }
             .fansBoxChart {
-              // border: 1px solid;
               width: 90%;
-              // height: 100%;
-              .lbl-off,
-              .lbl-on {
-                cursor: pointer;
-                display: block;
-                font-size: 0.9em;
+              text-align: center;
+              h1 {
+                font-size: $default-font-size * 8;
+                color: $default-yello;
+                line-height: 0.1rem;
+                margin-top: 30px;
+                margin-bottom: 70px;
+              }
+              h6 {
+                color: #b5b4b4;
                 font-weight: bold;
-                line-height: 1em;
-                position: absolute;
-                top: 8 / 16 * 1em;
-                transition: opacity $transition-default;
-                text-transform: uppercase;
               }
-
-              .lbl-off {
-                right: 75px;
-                top: 60px;
-              }
-
-              .lbl-on {
-                color: $black;
-                opacity: 0;
-                right: 140px;
-                top: 60px;
-              }
-
-              .switch {
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-                height: 30px;
-                font-size: 1em;
-                right: 90px;
-                line-height: 0;
-                outline: none;
-                position: absolute;
-                top: 50px;
-                width: 90px;
-
-                &:before,
-                &:after {
-                  content: "";
-                  font-size: 1.2em;
-                  position: absolute;
-                }
-
-                &:before {
-                  border-radius: 20 / 16 * 1em;
-                  background: $color-silver;
-                  height: $height;
-                  left: 4 / 16 * -1em;
-                  top: 3 / 16 * -1em;
-                  transition: background-color $transition-default;
-                  width: 120px;
-                }
-
-                &:after {
-                  box-shadow: 0 0.0625em 0.375em 0 #666;
-                  border-radius: 50%;
-                  background: $color-white;
-                  height: 24 / 16 * 1em;
-                  transform: translate(0, 0);
-                  transition: transform $transition-default;
-                  width: 24 / 16 * 1em;
-                }
-
-                &:checked {
-                  &:after {
-                    transform: translate(40 / 16 * 1.7em, 0);
-                  }
-
-                  & ~ .lbl-off {
-                    opacity: 0;
-                  }
-
-                  & ~ .lbl-on {
-                    opacity: 1;
-                  }
-                }
-
-                &#switch-orange {
-                  &:checked:before {
-                    background: $color-carrot;
-                  }
-                }
-
-                &#switch-blue {
-                  &:checked:before {
-                    background: $color-peter-river;
-                  }
-                }
+              table {
+                width: 100%;
               }
             }
           }
