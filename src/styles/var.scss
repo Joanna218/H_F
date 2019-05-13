@@ -1,25 +1,32 @@
 @charset "utf-8";
 
-/*===== variables_default =====*/
-$default-pruple: #787bf2;
-$default-yello: #fad14c;
+/* ============================= */
+/* ===== variables_default ===== */
+/* ============================= */
+
+$main-color: #fe816d; // 網粉 => 橘色
+$second-color: #89878a; // 網黑 => 灰色
+$third-color: #d16c5d; // 比網粉深一點 => 深紅色
+$default-color: #fff; // 預設為白色       => 白色
+$Shallow-text: #b5b4b4; // fansBox的小字 => 淺灰色
+$deep-text: #787775; // 異常帳號表格的文字 => 深灰色
+$good-bar: #fe816d;
+$love-bar: #f86260;
+$wow-bar: #64ae7d;
+$wu-bar: #61cef6;
+$angry-bar: #f84c68;
 $default-font-size: 10px;
+
 /*===== variables_header =====*/
-$header-bgc: #4c5063;
-$header-notice: #74788f;
+$header-bgc: #4f4f4f;
+$header-notice: #89878a;
 
 /*===== variables_sideBar =====*/
 $sideBar-bgc: #fff;
-// $sideBar-Profile-bgc: (
-//   background: linear-gradient(0deg, #787bf2 19%, #a2a6f6 60%),
-//   background: -moz-linear-gradient(0deg, #787bf2 19%, #a2a6f6 60%),
-//   background: -webkit-linear-gradient(0deg, #787bf2 19%, #a2a6f6 60%),
-//   background: -o-linear-gradient(0deg, #787bf2 19%, #a2a6f6 60%)
-// );
-$sideBar-list-hover-bg: #f6f3ea;
-$sideBar-list-select-bg: #f1f1f9;
-$sideBar-list-hover-bar: #fad14c;
-$sideBar-list-select-bar: #787bf2;
+$sideBar-list-hover-bg: #efeef0;
+$sideBar-list-select-bg: #fbe5e1;
+$sideBar-list-hover-bar: #89878a;
+$sideBar-list-select-bar: #fe816d;
 
 /*===== variables_main =====*/
 $main-bgc: #f2f3f3;

@@ -14,7 +14,14 @@
     <link rel="stylesheet" href="./build/css/analysis.css" />
     <link rel="stylesheet" href="./build/sprite.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script>
+      zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+      ZC.LICENSE = [
+        "569d52cefae586f634c54f86dc99e6a9",
+        "ee6b7db5b51705a13dc2339db3edaf6d"
+      ];
+    </script>
   </head>
   <body>
     <div class="container-fluid wrapper">
@@ -64,7 +71,7 @@
           <div class="row header">
             <div class="col-md-11">
               <div id="headerLogo">
-                <h2>Hey!Fans md-10</h2>
+                <h2>Hey!Fans</h2>
               </div>
             </div>
             <div id="haederNotice" class="col-md-1">
@@ -79,22 +86,14 @@
               <div class="col-md-12">
                 <div class="fansBox BoxDiff">
                   <div class="fansBoxTitle col-md-4">
-                    <h4>選擇粉絲專頁</h4>
+                    <h5>選擇粉絲專頁</h5>
                   </div>
-                  <div class="fansPageSelect col-md-8">
-                    <div class="checkBox">
-                      <input type="checkbox" name="" id="" />
-                      <label for="">韓國瑜</label>
-                    </div>
-                    <div class="checkBox">
-                      <input type="checkbox" name="" id="" />
-                      <label for="">賴清德</label>
-                    </div>
-
-                    <div class="checkBox">
-                      <input type="checkbox" name="" id="" />
-                      <label for="">郭台銘</label>
-                    </div>
+                  <div class="checkBoxGroup col-md-8">
+                    <li>
+                      <input type="checkbox" value="韓國瑜" checked />韓國瑜
+                    </li>
+                    <li><input type="checkbox" value="賴清德" />賴清德</li>
+                    <li><input type="checkbox" value="郭台銘" />郭台銘</li>
                   </div>
                 </div>
               </div>
@@ -104,20 +103,20 @@
               <div class="col-md-4">
                 <div class="fansBox">
                   <div class="fansBoxTitle">
-                    <h4>粉絲比例圖</h4>
+                    <h5>粉絲比例圖</h5>
                   </div>
                   <div class="fansBoxChart">
-                    <!-- <canvas id="fansDoughnut" width="100" height="100"></canvas> -->
+                    <div id="myChart"></div>
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="fansBox">
                   <div class="fansBoxTitle">
-                    <h4>粉絲重疊</h4>
+                    <h5>粉絲重疊</h5>
                   </div>
                   <div class="fansBoxChart">
-                    <h1>5010</h1>
+                    <h1 id="fansOverlap">5010</h1>
                     <h6>帳號重疊</h6>
                   </div>
                 </div>
@@ -125,10 +124,10 @@
               <div class="col-md-4">
                 <div class="fansBox">
                   <div class="fansBoxTitle">
-                    <h4>假帳號重疊</h4>
+                    <h5>假帳號重疊</h5>
                   </div>
                   <div class="fansBoxChart">
-                    <h1>420</h1>
+                    <h1 id="fakeAccount">420</h1>
                     <h6>假帳號重疊</h6>
                   </div>
                 </div>
@@ -139,10 +138,10 @@
               <div class="col-md-6">
                 <div class="fansBox">
                   <div class="fansBoxTitle">
-                    <h4>異常帳號</h4>
+                    <h5>異常帳號</h5>
                   </div>
                   <div class="fansBoxChart">
-                    <table border="1px">
+                    <table>
                       <thead>
                         <tr>
                           <th>帳號名稱</th>
@@ -179,7 +178,7 @@
               <div class="col-md-6">
                 <div class="fansBox">
                   <div class="fansBoxTitle">
-                    <h4>粉專影響力</h4>
+                    <h5>粉專影響力</h5>
                   </div>
                 </div>
               </div>
@@ -190,18 +189,34 @@
     </div>
     <!-- 右邊main -->
   </body>
-  <script src="./build/js/app.js"></script>
+  <script src="./build/js/analysis.js"></script>
 
-  <!-- <script>
+  <script>
     (function($) {
-      console.log("read");
-      $("#userProfile").on("click", function() {
-        console.log("userProfiledd");
-        $("#sideBar").toggleClass("col-md-2");
-        $("#main").toggleClass("col-md-10");
-        $("#sideBar").toggleClass("col-md-1");
-        $("#main").toggleClass("col-md-11");
+      $(".checkBoxGroup li input").on("click", function() {
+        if ($(this).prop("checked")) {
+          $(".checkBoxGroup li input:checkbox").prop("checked", false);
+          $(this).prop("checked", true);
+        }
+        var personValue = $(this).val();
+        var fansOverlap = 0;
+        var fakeAccount = 0;
+        if (personValue == "韓國瑜") {
+          console.log("韓國瑜");
+          fansOverlap = 5010;
+          fakeAccount = 420;
+        } else if (personValue == "賴清德") {
+          console.log("賴清德");
+          fansOverlap = 6010;
+          fakeAccount = 380;
+        } else {
+          console.log("郭台銘");
+          fansOverlap = 4010;
+          fakeAccount = 520;
+        }
+        $("#fansOverlap").text(fansOverlap);
+        $("#fakeAccount").text(fakeAccount);
       });
     })($);
-  </script> -->
+  </script>
 </html>

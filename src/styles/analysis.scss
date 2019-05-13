@@ -73,34 +73,29 @@ body {
           }
         }
         #featureLists {
-          // border: 1px solid;
           #featureListsUl {
-            // border: 1px solid;
             margin: 0;
             padding: 0;
             margin-top: 25px;
             .featureListsli {
-              // padding: 10px 0px;
               transition: 0.3s;
               border-bottom: 1px solid rgba(0, 0, 0, 0.2);
               box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
               a {
-                // border: 1px solid;
                 padding: 20px;
-                // background-color: pink;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                color: $default-pruple;
+                color: $main-color;
                 font-weight: bolder;
-                font-size: $default-font-size * 2.2;
+                font-size: $default-font-size * 1.8;
               }
               .icon {
                 display: inline-block;
                 text-indent: -999px;
                 overflow: hidden;
-                width: 33px;
-                height: 33px;
+                width: 34px;
+                height: 34px;
                 border: 1px solid;
               }
               &:hover {
@@ -119,7 +114,6 @@ body {
       }
       #main {
         background-color: $main-bgc;
-        // height: 100%;
         min-height: 100vh;
         .header {
           background-color: $header-bgc;
@@ -128,6 +122,9 @@ body {
           align-items: center;
           #headerLogo {
             border: 1px solid;
+            h2 {
+              color: $default-color;
+            }
           }
           #haederNotice {
             border: 1px solid;
@@ -145,18 +142,13 @@ body {
         .content {
           border: 1px solid;
           background-color: $main-bgc;
-          // height: auto;
           .fansBox {
-            // width: 90%;
-            // height: 100%;
             max-height: 100vh;
-            background-color: #fff;
+            background-color: $default-color;
             margin-top: 30px;
             padding-left: 15px;
-            // border: 1px solid;
             border-radius: 15px;
             box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.3);
-            // margin-left: auto;
             margin-left: 20px;
             display: flex;
             flex-direction: column;
@@ -165,42 +157,32 @@ body {
               flex-direction: row;
             }
             .fansBoxTitle {
-              // border: 1px solid;
               width: 90%;
-              margin: 20px 0px;
-              font-weight: bold;
-              h4 {
-                color: $default-pruple;
+              margin: 15px 0px;
+              h5 {
+                color: $main-color;
                 position: relative;
                 font-weight: 700;
                 &::before {
                   content: "";
                   display: block;
                   position: absolute;
-                  // width: 5px;
                   height: 80%;
-                  border-left: 5px solid red;
+                  border-left: 5px solid $main-color;
                   margin-left: -10px;
                   margin-top: 3px;
                 }
               }
-
-              span {
-                color: $default-yello;
-              }
             }
-            .fansPageSelect {
+            .checkBoxGroup {
               display: flex;
-              .checkBox {
+              li {
                 margin-right: 20px;
-                // justify-item: space-between;
+                font-size: $default-font-size * 2;
                 input {
                   width: 20px;
                   height: 20px;
-                }
-                label {
-                  font-size: $default-font-size * 2;
-                  // margin-bottom: 0px;
+                  margin-right: 5px;
                 }
               }
             }
@@ -209,17 +191,40 @@ body {
               text-align: center;
               h1 {
                 font-size: $default-font-size * 8;
-                color: $default-yello;
+                color: $third-color;
                 line-height: 0.1rem;
                 margin-top: 30px;
                 margin-bottom: 70px;
               }
               h6 {
-                color: #b5b4b4;
+                color: $Shallow-text;
                 font-weight: bold;
               }
               table {
                 width: 100%;
+                color: $deep-text;
+                margin-bottom: 30px;
+                position: relative;
+                thead {
+                  font-size: $default-font-size * 1.8;
+                  &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    // height: 1px;
+                    width: 100%;
+                    border-bottom: 1px solid $Shallow-text;
+                  }
+                }
+                tbody {
+                  font-weight: 700;
+                  tr {
+                    border-bottom: 1px dashed #787775;
+                    td {
+                      padding: 10px 0px;
+                    }
+                  }
+                }
               }
             }
           }

@@ -39,7 +39,7 @@ const paths = {
     dest: "build"
   },
   script: {
-    src: "src/app/index.js",
+    src: "src/app/*.js",
     dest: "build/js"
   },
   venders: {
@@ -135,7 +135,8 @@ const CSSSprite = async function(cb) {
         cssName: "sprite.css" // 每一個小圖的css
       })
     )
-    .pipe(gulp.dest(paths.csssprite.dest));
+    .pipe(gulp.dest(paths.csssprite.dest))
+    .pipe(connect.reload());
   cb();
 };
 
@@ -147,9 +148,9 @@ const buildScript = async function(cb) {
   console.log("buildScript");
   gulp
     .src(paths.script.src)
-    .pipe(concat("app.js"))
+    // .pipe(concat("app.js"))
     .pipe(gulp.dest(paths.script.dest))
-    .pipe(rename("app.min.js"))
+    // .pipe(rename("app.min.js"))
     // .pipe(uglify())
     .pipe(gulp.dest(paths.script.dest))
     .pipe(connect.reload());
