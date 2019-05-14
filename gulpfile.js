@@ -22,7 +22,7 @@ const paths = {
     src: "./*.html"
   },
   styles: {
-    src: "./src/styles/analysis.scss",
+    src: "./src/styles/*.scss",
     watch: "./src/styles/**/*.scss",
     dest: "build/css"
   },

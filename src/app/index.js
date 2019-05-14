@@ -3,7 +3,7 @@ var ctx = document.getElementById("fansDoughnut").getContext("2d");
 var fansDoughnut = new Chart(ctx, {
   type: "doughnut",
   data: {
-    labels: ["紛絲", "中立", "黑粉"],
+    labels: ["紛絲", "假帳號", "黑粉"],
     datasets: [
       {
         data: [50, 20, 30], // 資料比例

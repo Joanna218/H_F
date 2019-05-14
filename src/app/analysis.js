@@ -13,29 +13,23 @@ var myConfig = {
       {
         type: "all",
         text: "%npv%",
-        placement: "in"
+        placement: "out"
       }
     ]
   },
   plotarea: {
     backgroundColor: "transparent",
     //  borderWidth: 0,
-    //  borderRadius: "0 0 0 10",
+    // borderRadius: "0 0 0 10",
     margin: "0 0 0 0"
   },
   legend: {
     toggleAction: "remove",
-    backgroundColor: "#FBFCFE",
+    // backgroundColor: "#FBFCFE",
     borderWidth: 0,
     adjustLayout: true,
-    align: "center",
-    verticalAlign: "bottom",
-    marker: {
-      type: "circle",
-      cursor: "pointer",
-      borderWidth: 0,
-      size: 5
-    },
+    // align: "center",
+    // verticalAlign: "bottom",
     item: {
       fontColor: "#777",
       cursor: "pointer",
@@ -44,7 +38,7 @@ var myConfig = {
     },
     mediaRules: [
       {
-        maxWidth: 500,
+        // maxWidth: 500,
         visible: false
       }
     ]
@@ -72,16 +66,6 @@ var myConfig = {
       marker: {
         backgroundColor: "#E80C60"
       }
-    },
-    {
-      text: "Index",
-      values: [43781],
-      lineColor: "#9B26AF",
-      backgroundColor: "#9B26AF",
-      lineWidth: 1,
-      marker: {
-        backgroundColor: "#9B26AF"
-      }
     }
   ]
 };
@@ -89,29 +73,29 @@ var myConfig = {
 zingchart.render({
   id: "myChart",
   data: {
-    gui: {
-      contextMenu: {
-        button: {
-          visible: false,
-          lineColor: "#2D66A4",
-          backgroundColor: "#2D66A4"
-        },
-        gear: {
-          alpha: 1,
-          backgroundColor: "#2D66A4"
-        },
-        // position: "right",
-        backgroundColor: "#306EAA" /*sets background for entire contextMenu*/,
-        docked: true,
-        item: {
-          backgroundColor: "#306EAA",
-          borderColor: "#306EAA",
-          borderWidth: 0,
-          fontFamily: "Lato",
-          color: "#fff"
-        }
-      }
-    },
+    // gui: {
+    //   contextMenu: {
+    //     button: {
+    //       visible: false,
+    //       lineColor: "#2D66A4",
+    //       backgroundColor: "#2D66A4"
+    //     },
+    //     gear: {
+    //       alpha: 1,
+    //       backgroundColor: "#2D66A4"
+    //     },
+    //     // position: "right",
+    //     backgroundColor: "#306EAA" /*sets background for entire contextMenu*/,
+    //     docked: true,
+    //     item: {
+    //       backgroundColor: "#306EAA",
+    //       borderColor: "#306EAA",
+    //       borderWidth: 0,
+    //       fontFamily: "Lato",
+    //       color: "#fff"
+    //     }
+    //   }
+    // },
     graphset: [myConfig]
   },
   height: "300px",

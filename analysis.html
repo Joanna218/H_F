@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
-    />
+    /> -->
     <link rel="stylesheet" href="./build/css/analysis.css" />
     <link rel="stylesheet" href="./build/sprite.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
     <script>
       zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
@@ -43,8 +43,8 @@
           <!-- 下方功能列表 -->
           <div id="featureLists">
             <ul id="featureListsUl">
-              <li class="featureListsli isActive">
-                <a href="#">
+              <li class="featureListsli">
+                <a href="./index.html">
                   <span class="featureName">儀錶板</span>
                   <span class="icon icon-dashboard"></span>
                 </a>
@@ -59,6 +59,12 @@
                 <a href="#">
                   <span class="featureName">廣告投放分析</span>
                   <span class="icon icon-ad"></span>
+                </a>
+              </li>
+              <li class="featureListsli isActive">
+                <a href="./analysis.html">
+                  <span class="featureName">交叉分析</span>
+                  <span class="icon icon-cross_list"></span>
                 </a>
               </li>
             </ul>
@@ -188,8 +194,9 @@
       </div>
     </div>
     <!-- 右邊main -->
+    <script src="./build/js/venders.min.js"></script>
+    <script src="./build/js/analysis.js"></script>
   </body>
-  <script src="./build/js/analysis.js"></script>
 
   <script>
     (function($) {

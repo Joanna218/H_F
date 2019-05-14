@@ -5,15 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-      crossorigin="anonymous"
-    />
-    <!-- <link rel="stylesheet" href="./build/css/index.css" /> -->
+    <link rel="stylesheet" href="./build/css/index.css" />
     <link rel="stylesheet" href="./build/sprite.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.4/d3.layout.cloud.min.js"></script>
@@ -30,7 +23,7 @@
                 <img src="./build/images/head.jpg" alt="" />
               </div>
               <div id="userIM">
-                <h5>林靜妤</h5>
+                <h5>蔡英文</h5>
                 <span>高級會員</span>
               </div>
             </div>
@@ -39,7 +32,7 @@
           <div id="featureLists">
             <ul id="featureListsUl">
               <li class="featureListsli isActive">
-                <a href="#">
+                <a href="./index.html">
                   <span class="featureName">儀錶板</span>
                   <span class="icon icon-dashboard"></span>
                 </a>
@@ -56,6 +49,12 @@
                   <span class="icon icon-ad"></span>
                 </a>
               </li>
+              <li class="featureListsli">
+                <a href="./analysis.html">
+                  <span class="featureName">交叉分析</span>
+                  <span class="icon icon-cross_list"></span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -65,7 +64,7 @@
           <div class="row header">
             <div class="col-md-11">
               <div id="headerLogo">
-                <h2>Hey!Fans md-10</h2>
+                <h2>Hey!Fans</h2>
               </div>
             </div>
             <div id="haederNotice" class="col-md-1">
@@ -79,18 +78,18 @@
               <div class="col-md-4">
                 <div class="fansBox">
                   <div class="fansBoxTitle">
-                    <h2>粉絲比例圖</h2>
+                    <h5>粉絲比例圖</h5>
                     <span>以下顯示近3個月資料</span>
                   </div>
                   <div class="fansBoxChart">
-                    <canvas id="fansDoughnut" width="400" height="400"></canvas>
+                    <canvas id="fansDoughnut" width="300" height="300"></canvas>
                   </div>
                 </div>
               </div>
               <div class="col-md-8">
                 <div class="fansBox">
                   <div class="fansBoxTitle">
-                    <h2>心情比例圖</h2>
+                    <h5>心情比例圖</h5>
                   </div>
                   <div class="fansBoxChart">
                     <canvas id="moodBar"></canvas>
@@ -103,7 +102,7 @@
               <div class="col-md-7">
                 <div class="fansBox">
                   <div class="fansBoxTitle">
-                    <h2>粉黑文字雲</h2>
+                    <h5>粉黑文字雲</h5>
                     <span>以下顯示近3個月資料</span>
                   </div>
                   <div class="fansBoxChart">
@@ -125,7 +124,7 @@
               <div class="col-md-5">
                 <div class="fansBox">
                   <div class="fansBoxTitle">
-                    <h2>留言熱門話題排行</h2>
+                    <h5>留言熱門話題排行</h5>
                     <span>以下顯示近3個月資料</span>
                   </div>
                   <div class="fansBoxChart">Chart</div>
@@ -136,8 +135,9 @@
         </div>
       </div>
     </div>
+    <script src="./build/js/venders.min.js"></script>
+    <script src="./build/js/index.js"></script>
   </body>
-  <script src="./build/js/app.js"></script>
 
   <!-- <script>
     (function($) {

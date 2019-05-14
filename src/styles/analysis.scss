@@ -31,7 +31,7 @@ body {
   background-color: $main-bgc;
   .wrapper {
     .row {
-      border: 1px solid;
+      // border: 1px solid;
       #sideBar {
         background-color: $sideBar-bgc;
         padding: 0;
@@ -44,16 +44,16 @@ body {
         // border: 1px solid;
         #userProfile {
           height: 200px;
-          background: linear-gradient(0deg, #787bf2 19%, #a2a6f6 60%);
-          background: -moz-linear-gradient(0deg, #787bf2 19%, #a2a6f6 60%);
-          background: -webkit-linear-gradient(0deg, #787bf2 19%, #a2a6f6 60%);
-          background: -o-linear-gradient(0deg, #787bf2 19%, #a2a6f6 60%);
+          background: linear-gradient(180deg, #faa88f 37%, #fe816d 74%);
+          background: -moz-linear-gradient(180deg, #faa88f 37%, #fe816d 74%);
+          background: -webkit-linear-gradient(180deg, #faa88f 37%, #fe816d 74%);
+          background: -o-linear-gradient(180deg, #faa88f 37%, #fe816d 74%);
           display: flex;
           justify-content: center;
           align-items: center;
           #userProfileBox {
             width: 90%;
-            border: 1px solid;
+            // border: 1px solid;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -88,7 +88,7 @@ body {
                 align-items: center;
                 color: $main-color;
                 font-weight: bolder;
-                font-size: $default-font-size * 1.8;
+                font-size: $default-font-size * 2;
               }
               .icon {
                 display: inline-block;
@@ -96,7 +96,7 @@ body {
                 overflow: hidden;
                 width: 34px;
                 height: 34px;
-                border: 1px solid;
+                // border: 1px solid;
               }
               &:hover {
                 margin-left: 1px;
@@ -161,17 +161,7 @@ body {
               margin: 15px 0px;
               h5 {
                 color: $main-color;
-                position: relative;
                 font-weight: 700;
-                &::before {
-                  content: "";
-                  display: block;
-                  position: absolute;
-                  height: 80%;
-                  border-left: 5px solid $main-color;
-                  margin-left: -10px;
-                  margin-top: 3px;
-                }
               }
             }
             .checkBoxGroup {
