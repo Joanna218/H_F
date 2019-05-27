@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <!-- <link
+    <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
       crossorigin="anonymous"
-    /> -->
+    />
     <link rel="stylesheet" href="./build/css/analysis.css" />
     <link rel="stylesheet" href="./build/sprite.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <!-- <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
     <script>
       zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
       ZC.LICENSE = [
         "569d52cefae586f634c54f86dc99e6a9",
         "ee6b7db5b51705a13dc2339db3edaf6d"
       ];
-    </script>
+    </script> -->
   </head>
   <body>
     <div class="container-fluid wrapper">
@@ -35,8 +36,10 @@
                 <img src="./build/images/head.jpg" alt="" />
               </div>
               <div id="userIM">
-                <h5>林靜妤</h5>
-                <span>高級會員</span>
+                <span class="userName">蔡英文</span>
+                <span class="userlevel"
+                  ><i class="fas fa-crown"></i>高級會員</span
+                >
               </div>
             </div>
           </div>
@@ -112,7 +115,8 @@
                     <h5>粉絲比例圖</h5>
                   </div>
                   <div class="fansBoxChart">
-                    <div id="myChart"></div>
+                    <!-- <div id="myChart"></div> -->
+                    <canvas id="fansDoughnut" width="300" height="300"></canvas>
                   </div>
                 </div>
               </div>
@@ -208,10 +212,14 @@
         var personValue = $(this).val();
         var fansOverlap = 0;
         var fakeAccount = 0;
+        var Data = 0;
+        var Data1 = 0;
         if (personValue == "韓國瑜") {
           console.log("韓國瑜");
           fansOverlap = 5010;
           fakeAccount = 420;
+          Data = 60;
+          Data1 = 40;
         } else if (personValue == "賴清德") {
           console.log("賴清德");
           fansOverlap = 6010;

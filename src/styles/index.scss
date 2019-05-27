@@ -50,7 +50,6 @@ body {
           align-items: center;
           #userProfileBox {
             width: 90%;
-            // border: 1px solid;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -65,7 +64,21 @@ body {
               }
             }
             #userIM {
-              margin-top: 10px;
+              margin-top: 2px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              .userName {
+                color: $default-color;
+                font-size: $default-font-size * 2;
+              }
+              .userlevel {
+                color: #fad14c;
+                font-size: $default-font-size * 1.4;
+                text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+                  1px 1px 0 #000, 1px 1px 1px black;
+              }
             }
           }
         }
@@ -89,7 +102,6 @@ body {
                 justify-content: space-between;
                 align-items: center;
                 color: $main-color;
-                font-weight: 900;
                 font-size: $default-font-size * 2;
               }
               .icon {
@@ -123,21 +135,21 @@ body {
           display: flex;
           align-items: center;
           #headerLogo {
-            border: 1px solid;
             h2 {
               color: $default-color;
             }
           }
           #haederNotice {
-            border: 1px solid;
+            // border: 1px solid;
             .icon {
               display: inline-block;
               text-indent: -999px;
               overflow: hidden;
               width: 51px;
               height: 51px;
-              border: 1px solid;
+              // border: 1px solid;
               border-radius: 50%;
+              background-color: #74788f;
             }
           }
         }
@@ -159,11 +171,9 @@ body {
               margin: 15px 0px;
               h5 {
                 color: $main-color;
-                font-weight: 700;
               }
               span {
                 color: $second-color;
-                font-weight: bold;
                 font-size: $default-font-size * 1.2;
                 position: relative;
                 margin-left: 10px;
