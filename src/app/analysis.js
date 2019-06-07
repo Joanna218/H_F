@@ -1,21 +1,43 @@
 // =====================紛絲比例圖==================================
 var ctx = document.getElementById("fansDoughnut").getContext("2d");
 var fansDoughnut = new Chart(ctx, {
-  type: "doughnut",
+  type: "horizontalBar",
   data: {
     labels: ["蔡英文", "韓國瑜"],
     datasets: [
       {
-        data: [60, 40], // 資料比例
-        backgroundColor: ["#fe816d", "#89878a"],
-        borderColor: "#787775",
-        borderWidth: 1,
-        hoverBackgroundColor: ["#fe816d", "#89878a"]
+        x: "2016-12-25",
+        y: 20,
+        label: "網粉",
+        data: [67.8],
+        backgroundColor: "#fe816d" // green
+      },
+      {
+        label: "網黑",
+        data: [20.7],
+        backgroundColor: "#89878a" // yellow
+      },
+      {
+        label: "假帳號",
+        data: [11.4],
+        backgroundColor: "#d16c5d" // red
       }
     ]
   },
   options: {
-    cutoutPercentage: 80
+    // cutoutPercentage: 80
+    scales: {
+      xAxes: [
+        {
+          stacked: true
+        }
+      ],
+      yAxes: [
+        {
+          stacked: true
+        }
+      ]
+    }
   }
 });
 

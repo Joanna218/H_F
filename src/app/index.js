@@ -3,11 +3,11 @@ var ctx = document.getElementById("fansDoughnut").getContext("2d");
 var fansDoughnut = new Chart(ctx, {
   type: "doughnut",
   data: {
-    labels: ["紛絲", "假帳號", "黑粉"],
+    labels: ["網粉", "網黑", "假帳號"],
     datasets: [
       {
         data: [50, 20, 30], // 資料比例
-        backgroundColor: ["#787bf2", "#78775", "#fad14c"],
+        backgroundColor: ["#fe816d", "#89878a", "#d16c5d"],
         borderColor: "#787775",
         borderWidth: 1,
         hoverBackgroundColor: ["red", "blue", "orange"]
@@ -26,7 +26,7 @@ var moodBar = new Chart(ctx, {
     labels: ["讚", "大心", "哈", "哇", "嗚", "怒"],
     datasets: [
       {
-        label: "按讚比例分析",
+        label: "心情回應分布狀況",
         data: [50, 20, 30, 12, 34, 25, 10], // 資料比例
         backgroundColor: [
           "#787bf2",
