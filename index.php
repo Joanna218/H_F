@@ -1,3 +1,4 @@
+<?php
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="./build/css/fans.css" />
+    <link rel="stylesheet" href="./build/css/index.css" />
     <link rel="stylesheet" href="./build/sprite.css" />
     <link
       rel="stylesheet"
@@ -40,7 +41,7 @@
           <!-- 下方功能列表 -->
           <div id="featureLists">
             <ul id="featureListsUl">
-              <li class="featureListsli">
+              <li class="featureListsli isActive">
                 <a href="./index.html">
                   <span class="featureName">儀錶板</span>
                   <span class="icon icon-dashboard"></span>
@@ -48,7 +49,7 @@
               </li>
               <li class="featureListsli">
                 <a href="./fans.html">
-                  <span class="featureName isActive">粉絲變化圖</span>
+                  <span class="featureName">粉絲變化圖</span>
                   <span class="icon icon-date"></span>
                 </a>
               </li>
@@ -82,13 +83,61 @@
           </div>
           <!-- 下方content -->
           <div class="container content">
-
+            <!-- 第一列row 粉絲比例圖、心情比例圖 -->
+            <div class="row">
+              <div class="col-md-4">
+                <div class="fansBox">
+                  <div class="fansBoxTitle">
+                    <h5>粉絲比例圖</h5>
+                    <span>以下顯示近3個月資料</span>
+                  </div>
+                  <div class="fansBoxChart">
+                    <canvas id="fansDoughnut" width="300" height="300"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="fansBox">
+                  <div class="fansBoxTitle">
+                    <h5>心情比例圖</h5>
+                  </div>
+                  <div class="fansBoxChart">
+                    <canvas id="moodBar"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 第二列row 粉黑文字雲、留言熱門話題排行 -->
+            <div class="row">
+              <div class="col-md-7">
+                <div class="fansBox">
+                  <div class="fansBoxTitle">
+                    <h5>粉黑文字雲</h5>
+                    <span>以下顯示近3個月資料</span>
+                  </div>
+                  <div class="fansBoxChart">
+                    <input
+                      type="checkbox"
+                      id="switch-blue"
+                      class="switch"
+                      checked
+                    />
+                    <label for="switch-blue" class="lbl-off">黑粉</label>
+                    <label for="switch-blue" class="lbl-on">紛絲</label>
+                    <div
+                      id="tag"
+                      style="border: 1px solid #000; height: 300px; width: 400px;"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <script src="./build/js/venders.min.js"></script>
-    <script src="./build/js/fans.js"></script>
+    <script src="./build/js/index.js"></script>
   </body>
 
   <!-- <script>
@@ -104,3 +153,4 @@
     })($);
   </script> -->
 </html>
+?php>
